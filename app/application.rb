@@ -20,7 +20,7 @@ class Application
         resp.write "Your cart is empty"
       end
     elsif req.path.match(/add/)
-      if @@items.include(item = req.params["item"])
+      if @@items.include?(item = req.params["item"])
         @@cart << item
       else
         resp.write "We don't have that item"
