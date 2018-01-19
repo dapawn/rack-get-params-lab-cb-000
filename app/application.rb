@@ -9,6 +9,7 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
+        item ||= "Your cart is empty"
         resp.write "#{item}\n"
       end
     elsif req.path.match(/cart/)
