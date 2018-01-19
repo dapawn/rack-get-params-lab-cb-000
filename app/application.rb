@@ -13,7 +13,7 @@ class Application
       end
     elsif req.path.match(/cart/)
         @@cart.each do |item|
-          item ||= "Your cart is empty"
+          item = "Your cart is empty" if cart.size < 1
           resp.write "#{item}\n"
         end
     elsif req.path.match(/search/)
